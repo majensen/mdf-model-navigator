@@ -13,7 +13,7 @@ whose files can be accessed online.
 To install and run, do
 
 ```shell
-npm install  mdf-model-navigator
+npm install mdf-model-navigator
 npm run build
 serve -s build
 ```
