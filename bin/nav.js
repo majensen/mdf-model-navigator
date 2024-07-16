@@ -3,8 +3,16 @@
 import finalhandler from 'finalhandler';
 import http from 'http';
 import serveStatic from 'serve-static';
+import process from 'node:process';
+import path from 'node:path';
 
-var serve = serveStatic('build', { index: ['index.html', 'index.htm'] });
+// find root in npx cache
+const root = path.join(
+  path.parse( path.parse(process.env._).dir ).dir,
+  path.parse(process.env._).name,
+  'build'
+);
+var serve = serveStatic(root, { index: ['index.html', 'index.htm'] });
 
 // Create server
 var server = http.createServer(function onRequest (req, res) {
