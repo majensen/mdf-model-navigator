@@ -1,8 +1,9 @@
 {
   "name": "mdf-model-navigator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "type": "module",
+  "bin": "./bin/nav.js",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.6",
     "@testing-library/jest-dom": "^5.17.0",
@@ -10,16 +11,20 @@
     "@testing-library/user-event": "^13.5.0",
     "ajv": "^8.16.0",
     "axios": "^1.7.2",
+    "finalhandler": "^1.2.0",
     "htmlparser2": "^9.1.0",
+    "http": "^0.0.1-security",
     "lru-cache": "^10.3.0",
     "model-navigator-standalone": "^0.0.16",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^9.1.2",
     "react-scripts": "5.0.1",
+    "serve-static": "^1.15.0",
     "url": "^0.11.3"
   },
   "scripts": {
+    "launch": "serve -s build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
