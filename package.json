@@ -3,7 +3,9 @@
   "version": "0.1.3",
   "private": false,
   "type": "module",
-  "bin": "./bin/nav.js",
+  "bin": {
+    "mdf-model-navigator": "bin/nav.js"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.6",
     "@testing-library/jest-dom": "^5.17.0",
