@@ -25,6 +25,12 @@ export const modelRepos = {
       path: "/model-desc",
       files: ["ccdi-model.yml", "ccdi-model-props.yml", "terms.yml"],
     },
+    INS: {
+      home: "https://github.com/CBIIT/ins-model",
+      branch: "main",
+      path: "/model-desc",
+      files: ["ins-model.yml", "ins-model-props.yml"],
+    },
     GDC: {
       home: "https://github.com/CBIIT/gdc-model",
       branch: "main",
