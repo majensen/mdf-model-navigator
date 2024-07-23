@@ -19,7 +19,14 @@ const URLS = ({urls}) => {
       </>
     );
   }
-  const lis = urls.map( u => ( <li key={u.format()}>{u.format()}</li> ) );
+  const lis = urls.map( u => (
+    <li key={u.format()}>
+      <a href={u.format()}
+         target="_blank">
+        {u.format()}
+      </a>
+    </li>
+  ));
   return (
     <ul>{lis}</ul>
   );
