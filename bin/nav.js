@@ -8,8 +8,7 @@ import path from 'node:path';
 
 // find root in npx cache
 const root = path.join(
-  path.parse( path.parse(process.env._).dir ).dir,
-  path.parse(process.env._).name,
+  path.parse( import.meta.dirname ).dir,
   'build'
 );
 var serve = serveStatic(root, { index: ['index.html', 'index.htm'] });
