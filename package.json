@@ -1,6 +1,6 @@
 {
   "name": "mdf-model-navigator",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "private": false,
   "type": "module",
   "bin": {
@@ -17,7 +17,7 @@
     "htmlparser2": "^9.1.0",
     "http": "^0.0.1-security",
     "lru-cache": "^10.3.0",
-    "model-navigator-standalone": "^0.0.17",
+    "model-navigator-standalone": "^0.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^9.1.2",
