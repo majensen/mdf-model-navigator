@@ -13,7 +13,7 @@ whose files can be accessed online.
 To install and run, do
 
 ```shell
-npx mdf-model-navigator
+npx mdf-model-navigator@latest
 ```
 
 and open a browser to http://localhost:3000.
