@@ -13,6 +13,12 @@ export const modelRepos = {
     path: "/model-desc",
     files: ["cds-model.yml", "cds-model-props.yml"],
   },
+  HTAN: {
+    home: "https://github.com/CBIIT/htan-model",
+    branch: "main",
+    path: "/model-desc",
+    files: ["htan-model.yaml", "htan-model-props.yaml", "htan-model-terms.yaml"],
+  },
   ICDC: {
     home: "https://github.com/CBIIT/icdc-model-tool",
     branch: "develop",
