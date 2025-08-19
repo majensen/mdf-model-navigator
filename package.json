@@ -22,6 +22,7 @@
     "react-dom": "^18.3.1",
     "react-redux": "^9.1.2",
     "react-scripts": "5.0.1",
+    "serve": "^14.2.4",
     "serve-static": "^1.15.0",
     "url": "^0.11.3"
   },

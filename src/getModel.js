@@ -17,23 +17,18 @@ export function inputToUrls(text) {
   return urls;
 }
 
-export function loadMDFModel(...urls) {
-  let ps = urls.map( (u) => {
-    return axios.get(u instanceof url.Url ? u.format() : u)
-      .then( (r) => { return r.data; } );
+export function loadMDFModel(...inputs) {
+  let ps = inputs.map((input) => {
+    // If input is a URL, fetch it
+    if (input instanceof url.Url) {
+      return axios.get(input.format())
+        .then(r => r.data);
+    }
+    // else assume input is text (MDF file content)
+    return Promise.resolve(input);
   });
 
-  let p = Promise.all(ps)
-      .then( (results) => {
-        let dta = [];
-        results.forEach( (result) => {
-          dta.push(result);
-        });
-        return dta;
-      })
-      .then( (dta) =>
-        { return new MDFReader(...dta); }
-      )
-      .catch( (e) => { throw new Error(e); } );
-  return p;
+  return Promise.all(ps)
+    .then(dta => new MDFReader(...dta))
+    .catch(e => { throw new Error(e); });
 }

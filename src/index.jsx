@@ -60,42 +60,48 @@ const Model = ({model}) => {
 }
 
 const Page = () => {
-  const [fileBoxText, setFileBoxText] = useState("What?");
   const [model, setModel] = useState(null);
   const [urls, setUrls] = useState([]);
-  useEffect( () => {
+  const [fileBoxText, setFileBoxText] = useState([]);  
+  const [uploadedFiles, setUploadedFiles] = useState([]); // Track uploaded files
+
+  useEffect(() => {
     let ignore = false;
-    if (urls && urls.length >0) {
-      loadMDFModel(...urls).then(
-        (m) => {
-          if (!ignore) {
-            m.id = nanoid();
-            setModel(m);
-          }
-        });
+    if (urls.length > 0) {
+      loadMDFModel(...urls).then((m) => {
+        if (!ignore) {
+          m.id = nanoid();
+          setModel(m);
+        }
+      });
+      return () => { ignore = true; };
+    } else if (uploadedFiles.length > 0) {
+      loadMDFModel(...uploadedFiles).then((m) => {
+        if (!ignore) {
+          m.id = nanoid();
+          setModel(m);
+        }
+      });
       return () => { ignore = true; };
     }
-  },[urls, model]);
+  }, [urls, uploadedFiles]);
+
   return (
     <>
       <UrlBox
         setFileBoxText={setFileBoxText}
         setUrls={setUrls}
         setModel={setModel}
+        setUploadedFiles={setUploadedFiles}
       />
       <div style={{color: "blue"}}>
-        <URLS
-          urls={urls}
-        />
+        <URLS urls={urls} />
       </div>
-      {/* <Model model={model} /> */}
       { model && (
-        <ModelNavigator
-          model={model}
-        />
+        <ModelNavigator model={model} />
       )}
     </>
-  )
+  );
 }
 
 root.render(
