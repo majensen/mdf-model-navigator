@@ -9,7 +9,7 @@ import path from 'node:path';
 // find root in npx cache
 const root = path.join(
   path.parse( import.meta.dirname ).dir,
-  'build'
+  'dist'
 );
 var serve = serveStatic(root, { index: ['index.html', 'index.htm'] });
 
